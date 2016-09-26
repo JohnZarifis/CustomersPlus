@@ -68,7 +68,7 @@ class __TwigTemplate_bce42d22cad9f71694505dbc865ad42f38f603d33f9ebb3afabf6701d83
         <link href=\"theme/assets/admin/layout/css/themes/darkblue.css\" rel=\"stylesheet\" type=\"text/css\" id=\"style_color\"/>
         <link href=\"theme/assets/admin/layout/css/custom.css\" rel=\"stylesheet\" type=\"text/css\"/>
         <!-- END THEME STYLES -->
-        <link rel= \"icon\" href=\"favicon .ico\">
+        <link rel= \"icon\" href=\"favicon.ico\">
             </head>
      <!-- END HEAD -->
     

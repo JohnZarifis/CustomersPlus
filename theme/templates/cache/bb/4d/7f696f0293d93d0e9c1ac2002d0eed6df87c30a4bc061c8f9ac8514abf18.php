@@ -291,7 +291,7 @@ class __TwigTemplate_bb4d7f696f0293d93d0e9c1ac2002d0eed6df87c30a4bc061c8f9ac8514
 \t\t\t\t\t<div class=\"portlet box blue-hoki\">
 \t\t\t\t\t\t<div class=\"portlet-title\">
 \t\t\t\t\t\t\t<div class=\"caption\">
-\t\t\t\t\t\t\t\t<i class=\"fa fa-globe\"></i>Πίνακας Ασθενών
+\t\t\t\t\t\t\t\t<i class=\"fa fa-globe\"></i>Πίνακας Πελατών
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t<div class=\"tools\">
 \t\t\t\t\t\t\t</div>
