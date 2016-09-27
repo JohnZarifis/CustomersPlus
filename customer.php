@@ -6,10 +6,10 @@ require_once("includes/database.php");
 
 if (!$session->is_logged_in()) { redirect_to("login.php"); }
 $username = $_SESSION['user_name'];
-$id = $_SESSION['user_id'];
+$sessionid = $_SESSION['user_id'];
 if (isset($_GET['id'])){
-$amka = $_GET['id'];
-$sql = " SELECT id, name ,surname,DATE_FORMAT(birthdate,'%d-%m-%Y') as birthdate ,address,phone1,phone2,phone3,height,weight,bodyfat,measurments, categories "
+$id = $_GET['id'];
+$sql = " SELECT id, name ,surname,DATE_FORMAT(birthdate,'%d-%m-%Y') as birthdate ,address,phone1,phone2,phone3,gender,height,weight,bodyfat,measurments, categories "
          ." ,alcohol,alergies,smoking,diseases, comments "
         . "FROM customers p "
         . "WHERE p.id = {$id}";
@@ -29,6 +29,7 @@ while ($row = mysql_fetch_assoc($result_set))
                          $phone1 =$row['phone1'];
                          $phone2= $row['phone2'];
                          $phone3=$row['phone3'];
+						 $gender=$row['gender'];
                          $height = $row['height'];
                          $weight = $row['weight'];
                          $bodyfat = $row['bodyfat'];
@@ -54,6 +55,7 @@ while ($row = mysql_fetch_assoc($result_set))
                                      'phone1'=>$phone1,
                                      'phone2' =>$phone2,
                                      'phone3' =>$phone3,
+									 'gender' => $gender,
                                      'height' =>$height,
                                     'weight'=>$weight,
                                     'bodyfat'=>$bodyfat,

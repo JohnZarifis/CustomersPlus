@@ -6,107 +6,67 @@ require_once("includes/database.php");
 
 if (!$session->is_logged_in()) { redirect_to("login.php"); }
 $username = $_SESSION['user_name'];
-$id = $_SESSION['user_id'];
+$userid = $_SESSION['user_id'];
 
-if (isset($_POST['exam'])) {
-        # Publish-button was clicked
-        echo "exam";
-    }
-elseif (isset($_POST['save'])) {
-        # Save-button was clicked
-        header( 'Location: index.php') ; 
-    }
-    
-    
-//      to fix  john  
-
-    
-    
-<?php
-require_once ("includes/configs.php");
-require_once ("includes/session.php");
-require_once("includes/funcs.php");
-require_once("includes/database.php");
-
-if (!$session->is_logged_in()) { redirect_to("login.php"); }
-$username = $_SESSION['user_name'];
-$id = $_SESSION['user_id'];
-
-if (isset($_POST['attendeeid'])) {
- $attendeeid = $_POST['attendeeid'];
-  $sql =    "select a.attendeeid,a.name,a.surname, a.comments,c.category, v.name as venue from attendee a "
-              ."inner join access c on a.attendeeid = c.attendeeid inner join venues v on v.category = c.category "
-			  ." where a.attendeeid = {$attendeeid} and DAY(v.starts) = DAY(CURDATE()) "
-			  . " and hour(now()) between hour(v.starts) -1 and hour(v.ends) + 2";
-			  
-$result_set = $database->query($sql);	
-$MultiDimArray = array();
-while ($row = mysql_fetch_assoc($result_set)) 
-			{
-                         $MultiDimArray[] = array (
-												   'attendeeid'=>$row['attendeeid'],
-                                                    'name' => $row['name'],
-                                                    'surname'=>$row['surname'],
-                                                    'comments'=>$row['comments'],                                                    												
-													'category' => $row['category'],
-													'venue' => $row['venue'],
-                             );
-			}
-
-$attendeeno = 0;
-foreach($MultiDimArray as $result){
-    
-    $attendeeno +=1;
-	$name = $result['name'];
- 
-    }      
- 
+if (isset($_GET['id'])){
+$id = $_GET['id'];
+$sql = " DELETE FROM CUSTOMERS WHERE id = {$id}";
+$database->query($sql);
 }
 
 
-if (isset($_POST['in']) & $attendeeno != 0) {
-    # in-button was clicked
-    $message = 'access is OK !!!';
-	$attendeeid = $_POST['attendeeid'];
-	$typeOfMove = 'in';
-	$sqlins = "insert into transactions (attendeeid,type) values ({$attendeeid}  , '{$typeOfMove}')  ";
-	$database->query($sqlins);	
-    //echo "he is in: ";
-     //echo $_POST['attendeeid'];
-     }
-    elseif (isset($_POST['out'])) {
+if (isset($_POST['save'])) {
         # Save-button was clicked
-        $attendeeid = $_POST['attendeeid'];
-		$typeOfMove = 'out';
-		$sqlout = "insert into transactions (attendeeid,type) values ({$attendeeid}  , '{$typeOfMove}') ";
-	    $database->query($sqlout);	
-       // echo "he is out: ";
-       //echo $_POST['attendeeid'];
-    header( 'Location: presentout.php') ; 
-    }
-	elseif(isset($_POST['ignore'])){
-     $sqlins = "insert into transactions (attendeeid,type) values ({$attendeeid}  , '{$typeOfMove}' )";
-	  $database->query($sqlins);	
-	}
-elseif(isset($_POST['in']) & $attendeeno == 0) {
-			 $message = 'No access at this time of day';
-			 //echo $message;
-			 $typeOfMove = 'in';
-			 $name = '';
-}		 
-           
-			$template = $twig->loadTemplate('attendancehandling.html');  
-            echo $template->render(array('username' => $username,
-                                     'attendeeno' =>$attendeeno,
-                                     'res'=>$MultiDimArray,
-									 'message'=>$message,
-									 'name'=>$name,
-                                     'type' =>$typeOfMove,
-									 'attendeeid' =>$attendeeid,
-                                    )); 
+        //header( 'Location: index.php') ;
+ echo "<pre>";
+print_r($_POST);
+echo "</pre>";
+//$name = htmlentities($_POST['name']);
+$name = mysql_real_escape_string($_POST['name']);
+$surname = mysql_real_escape_string($_POST['surname']);
+$birthdate = $_POST['birthdate'];
+$address = mysql_real_escape_string($_POST['address']);
+$phone1 = $_POST['phone1'];
+$phone2 = $_POST['phone2'];
+$phone3 = $_POST['phone3'];
+$gender = mysql_real_escape_string($_POST['gender']);
+$height  = mysql_real_escape_string($_POST['height']);
+$weight = mysql_real_escape_string($_POST['weight']);
+$bodyfat = mysql_real_escape_string($_POST['bodyfat']);
+$measurments = mysql_real_escape_string($_POST['measurments']);
+$categories = mysql_real_escape_string($_POST['categories']);
+$comments = mysql_real_escape_string($_POST['comments']);
+$alcohol = $_POST['alcohol'];
+$alergies = $_POST['alergies'];
+$smoking = $_POST['smoking'];
+$diseases = $_POST['diseases'];
 
+$birthdate = preg_replace('#(\d{2})-(\d{2})-(\d{4})#', '$3-$2-$1', $birthdate);
+   
+    
 
-	
-	
-	
-	
+//if (isset($_POST['id']) ) {
+if (empty($_POST['id']) ) {
+
+ $sql =   "insert into customers(name, surname, birthdate,"
+             ." address, phone1, phone2, phone3, gender, height, weight,"
+             ."bodyfat, measurments, categories, comments,alcohol, alergies, smoking, diseases) VALUES  "
+			 ."  ('{$name}'  , '{$surname}', '{$birthdate}' , '{$address}',   '{$phone1}', '{$phone2}'   ,   "
+			 ."   '{$phone3}', '{$gender}', '{$height}', '{$weight}' ,   '{$bodyfat}', '{$measurments}' , '{$categories}', '{$comments}' ,   "
+			 ."    {$alcohol}   ,   {$alergies}  , {$smoking}  ,   {$diseases}  ) ";
+//            
+//print($sql)	;
+$database->query($sql);
+
+}
+else{
+     $id =  $_POST['id'];
+    $sql = "update customers set  name = '{$name}', surname = '{$surname}' , birthdate = '{$birthdate}' ,  address =  '{$address}' ,   "
+	." phone1=  '{$phone1}', phone2 =   '{$phone2}' ,  phone3 =  '{$phone3}' ,  gender =  '{$gender}' ,  height = '{$height}' ,  weight = '{$weight}' ,  bodyfat = '{$bodyfat}' , "
+	." measurments = '{$measurments}' ,  categories =  '{$categories}' , comments = '{$comments}' , alcohol =  {$alcohol} , alergies =  {$alergies} , smoking = {$smoking},  diseases =  {$diseases}   "
+	." where id = {$id}";
+	print($sql)	;
+    $database->query($sql);
+}
+}
+ header( 'Location: index.php') ; 
