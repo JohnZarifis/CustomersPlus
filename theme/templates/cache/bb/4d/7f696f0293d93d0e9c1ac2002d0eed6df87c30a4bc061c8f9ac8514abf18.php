@@ -93,7 +93,7 @@ class __TwigTemplate_bb4d7f696f0293d93d0e9c1ac2002d0eed6df87c30a4bc061c8f9ac8514
 \t\t\t
 \t\t\t<!-- BEGIN PAGE HEADER-->
 \t\t\t<h3 class=\"page-title\">
-\t\t\tDashboard <small>Aσθενών</small>
+\t\t\tDashboard <small>Πελατών</small>
 \t\t\t</h3>
 \t\t\t<div class=\"page-bar\">
 \t\t\t\t<ul class=\"page-breadcrumb\">
@@ -120,11 +120,11 @@ class __TwigTemplate_bb4d7f696f0293d93d0e9c1ac2002d0eed6df87c30a4bc061c8f9ac8514
 \t\t\t\t\t\t\t<div class=\"number\">
 \t\t\t\t\t\t\t\t ";
         // line 72
-        echo twig_escape_filter($this->env, (isset($context["patientno"]) ? $context["patientno"] : null), "html", null, true);
+        echo twig_escape_filter($this->env, (isset($context["customerno"]) ? $context["customerno"] : null), "html", null, true);
         echo " #
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t<div class=\"desc\">
-\t\t\t\t\t\t\t\t Ασθενείς
+\t\t\t\t\t\t\t\t Πελάτες
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t</div>
 \t\t\t\t\t\t<a class=\"more\" href=\"#\">
@@ -145,7 +145,7 @@ class __TwigTemplate_bb4d7f696f0293d93d0e9c1ac2002d0eed6df87c30a4bc061c8f9ac8514
         echo " #
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t<div class=\"desc\">
-\t\t\t\t\t\t\t\t  Eξετάσεις
+\t\t\t\t\t\t\t\t  
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t</div>
 \t\t\t\t\t\t<a class=\"more\" href=\"#\">
@@ -187,7 +187,7 @@ class __TwigTemplate_bb4d7f696f0293d93d0e9c1ac2002d0eed6df87c30a4bc061c8f9ac8514
         echo " #
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t<div class=\"desc\">
-\t\t\t\t\t\t\t\t Διαγνώσεις
+\t\t\t\t\t\t\t\t 
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t</div>
 \t\t\t\t\t\t<a class=\"more\" href=\"#\">
@@ -200,91 +200,6 @@ class __TwigTemplate_bb4d7f696f0293d93d0e9c1ac2002d0eed6df87c30a4bc061c8f9ac8514
 \t\t\t<div class=\"clearfix\">
 \t\t\t</div>
 \t\t\t<div class=\"row\">
-\t\t\t\t<div class=\"col-md-6 col-sm-6\">
-\t\t\t\t\t<!-- BEGIN PORTLET-->
-\t\t\t\t\t<div class=\"portlet solid bordered grey-cararra\">
-\t\t\t\t\t\t<div class=\"portlet-title\">
-\t\t\t\t\t\t\t<div class=\"caption\">
-\t\t\t\t\t\t\t\t<i class=\"fa fa-bar-chart-o\"></i> Ασθενείς
-\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t<div class=\"actions\">
-\t\t\t\t\t\t\t\t<div class=\"btn-group\" data-toggle=\"buttons\">
-\t\t\t\t\t\t\t\t\t<label class=\"btn grey-steel btn-sm active\">
-\t\t\t\t\t\t\t\t\t<input type=\"radio\" name=\"options\" class=\"toggle\" id=\"option1\">Νέοι</label>
-\t\t\t\t\t\t\t\t\t<label class=\"btn grey-steel btn-sm\">
-\t\t\t\t\t\t\t\t\t<input type=\"radio\" name=\"options\" class=\"toggle\" id=\"option2\">Όλοι</label>
-\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t</div>
-\t\t\t\t\t\t<div class=\"portlet-body\">
-\t\t\t\t\t\t\t<div id=\"site_statistics_loading\">
-\t\t\t\t\t\t\t\t<img src=\"theme/assets/admin/layout/img/loading.gif\" alt=\"loading\"/>
-\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t<div id=\"site_statistics_content\" class=\"display-none\">
-\t\t\t\t\t\t\t\t<div id=\"site_statistics\" class=\"chart\">
-\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t</div>
-\t\t\t\t\t</div>
-\t\t\t\t\t<!-- END PORTLET-->
-\t\t\t\t</div>
-\t\t\t\t<div class=\"col-md-6 col-sm-6\">
-\t\t\t\t\t<!-- BEGIN PORTLET-->
-\t\t\t\t\t<div class=\"portlet solid grey-cararra bordered\">
-\t\t\t\t\t\t<div class=\"portlet-title\">
-\t\t\t\t\t\t\t<div class=\"caption\">
-\t\t\t\t\t\t\t\t<i class=\"fa fa-bullhorn\"></i>Εξετάσεις
-\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t<div class=\"actions\">
-\t\t\t\t\t\t\t\t<div class=\"btn-group pull-right\">
-\t\t\t\t\t\t\t\t\t<a href=\"\" class=\"btn grey-steel btn-sm dropdown-toggle\" data-toggle=\"dropdown\" data-hover=\"dropdown\" data-close-others=\"true\">
-\t\t\t\t\t\t\t\t\tFilter <span class=\"fa fa-angle-down\">
-\t\t\t\t\t\t\t\t\t</span>
-\t\t\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t\t\t<ul class=\"dropdown-menu pull-right\">
-\t\t\t\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t\t\t\t<a href=\"javascript:;\">
-\t\t\t\t\t\t\t\t\t\t\tQ1 2014 <span class=\"label label-sm label-default\">
-\t\t\t\t\t\t\t\t\t\t\tpast </span>
-\t\t\t\t\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t\t\t\t<a href=\"javascript:;\">
-\t\t\t\t\t\t\t\t\t\t\tQ2 2014 <span class=\"label label-sm label-default\">
-\t\t\t\t\t\t\t\t\t\t\tpast </span>
-\t\t\t\t\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t\t\t\t<li class=\"active\">
-\t\t\t\t\t\t\t\t\t\t\t<a href=\"javascript:;\">
-\t\t\t\t\t\t\t\t\t\t\tQ3 2014 <span class=\"label label-sm label-success\">
-\t\t\t\t\t\t\t\t\t\t\tcurrent </span>
-\t\t\t\t\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t\t\t\t<a href=\"javascript:;\">
-\t\t\t\t\t\t\t\t\t\t\tQ4 2014 <span class=\"label label-sm label-warning\">
-\t\t\t\t\t\t\t\t\t\t\tupcoming </span>
-\t\t\t\t\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t\t\t</ul>
-\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t</div>
-\t\t\t\t\t\t<div class=\"portlet-body\">
-\t\t\t\t\t\t\t<div id=\"site_activities_loading\">
-\t\t\t\t\t\t\t\t<img src=\"theme/assets/admin/layout/img/loading.gif\" alt=\"loading\"/>
-\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t<div id=\"site_activities_content\" class=\"display-none\">
-\t\t\t\t\t\t\t\t<div id=\"site_activities\" style=\"height: 228px;\">
-\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t</div>
-
-\t\t\t\t\t\t\t<div style=\"margin: 20px 0 10px 30px\">
-\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t</div>
-\t\t\t\t\t</div>
-
 \t\t\t\t<div class=\"row\">
 \t\t                 <div class=\"col-md-12\">
 \t\t\t\t\t<!-- BEGIN EXAMPLE TABLE PORTLET-->
@@ -300,10 +215,7 @@ class __TwigTemplate_bb4d7f696f0293d93d0e9c1ac2002d0eed6df87c30a4bc061c8f9ac8514
 \t\t\t\t\t\t\t<table class=\"table table-striped table-bordered table-hover\" id=\"sample_1\">
 \t\t\t\t\t\t\t<thead>
 \t\t\t\t\t\t\t<tr>
-\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t<th>
-\t\t\t\t\t\t\t\t\t ΑΜΚΑ
-\t\t\t\t\t\t\t\t</th>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t<th>
 \t\t\t\t\t\t\t\t\t ΟΝΟΜΑ
 \t\t\t\t\t\t\t\t</th>
@@ -317,75 +229,78 @@ class __TwigTemplate_bb4d7f696f0293d93d0e9c1ac2002d0eed6df87c30a4bc061c8f9ac8514
 \t\t\t\t\t\t\t\t<th>
 \t\t\t\t\t\t\t\t\t Διεύθυνση
 \t\t\t\t\t\t\t\t</th>
-                                                                                                                           
-                                                                <th>
-\t\t\t\t\t\t\t\t\t Τηλέφωνο
+                                <th>
+\t\t\t\t\t\t\t\t\t Τηλέφωνο 1
 \t\t\t\t\t\t\t\t</th>
-                                                                <th>
-                                                                        Στοιχεία
-\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t  <th>
+\t\t\t\t\t\t\t\t\t Τηλέφωνο 2
 \t\t\t\t\t\t\t\t</th>
-                                                                <th>
-\t\t\t\t\t\t\t\t\tΙστορικό Εξετάσεων
+\t\t\t\t\t\t\t\t    <th>
+\t\t\t\t\t\t\t\t\t Τηλέφωνο 3
 \t\t\t\t\t\t\t\t</th>
-                                                                <th>
-\t\t\t\t\t\t\t\t\tΝεα Εξέταση
+\t\t\t\t\t\t\t\t\t  <th>
+\t\t\t\t\t\t\t\t    Ημ. Γέννησης
 \t\t\t\t\t\t\t\t</th>
-                                                               
+                                <th>
+                                    Στοιχεία\t
+\t\t\t\t\t\t\t\t</th>
+                                
+                                 
 \t\t\t\t\t\t\t</tr>
 \t\t\t\t\t\t\t</thead>
 \t\t\t\t\t\t\t<tbody>
                                                             ";
-        // line 277
+        // line 191
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["res"]) ? $context["res"] : null));
         foreach ($context['_seq'] as $context["_key"] => $context["row"]) {
-            // line 278
+            // line 192
             echo "                                                         <tr>
                                                          <td>";
-            // line 279
-            echo twig_escape_filter($this->env, $this->getAttribute($context["row"], "amka", array(), "array"), "html", null, true);
-            echo "</td>
-                                                         <td>";
-            // line 280
+            // line 193
             echo twig_escape_filter($this->env, $this->getAttribute($context["row"], "name", array(), "array"), "html", null, true);
             echo "</td>
-                                                         
                                                          <td>";
-            // line 282
+            // line 194
             echo twig_escape_filter($this->env, $this->getAttribute($context["row"], "surname", array(), "array"), "html", null, true);
             echo "</td>
                                                          <td>";
-            // line 283
+            // line 195
             echo twig_escape_filter($this->env, $this->getAttribute($context["row"], "birthdate", array(), "array"), "html", null, true);
             echo "</td> 
                                                          <td>";
-            // line 284
+            // line 196
             echo twig_escape_filter($this->env, $this->getAttribute($context["row"], "address", array(), "array"), "html", null, true);
             echo "</td>
                                                          <td>";
-            // line 285
+            // line 197
             echo twig_escape_filter($this->env, $this->getAttribute($context["row"], "phone1", array(), "array"), "html", null, true);
             echo "</td>
-                                                         <td><a href=\"patient.php?amka=";
-            // line 286
-            echo twig_escape_filter($this->env, $this->getAttribute($context["row"], "amka", array(), "array"), "html", null, true);
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t  <td>";
+            // line 198
+            echo twig_escape_filter($this->env, $this->getAttribute($context["row"], "phone2", array(), "array"), "html", null, true);
+            echo "</td>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t   <td>";
+            // line 199
+            echo twig_escape_filter($this->env, $this->getAttribute($context["row"], "phone3", array(), "array"), "html", null, true);
+            echo "</td>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t   <td>";
+            // line 200
+            echo twig_escape_filter($this->env, $this->getAttribute($context["row"], "birthdate", array(), "array"), "html", null, true);
+            echo "</td>
+                                                         <td><a href=\"customer.php?id=";
+            // line 201
+            echo twig_escape_filter($this->env, $this->getAttribute($context["row"], "id", array(), "array"), "html", null, true);
             echo "\"><span class=\"label label-warning\">Αλλαγή Στοιχείων </span></a></td>
-                                                         <td><a href=\"examHistory.php?amka=";
-            // line 287
-            echo twig_escape_filter($this->env, $this->getAttribute($context["row"], "amka", array(), "array"), "html", null, true);
-            echo "\"><span class=\"label label-info\">Ιστορικό </span></a></td>                                                       
-                                                         <td><a href=\"examNew.php?amka=";
-            // line 288
-            echo twig_escape_filter($this->env, $this->getAttribute($context["row"], "amka", array(), "array"), "html", null, true);
-            echo "\"><span class=\"label label-success\"> Νέα εξέταση </span></a></td>
+                                                                                                   
+                                                      
                                                          </tr>
                                                           ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['row'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 291
+        // line 206
         echo "\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t</tbody>
 \t\t\t\t\t\t\t</table>
@@ -413,10 +328,10 @@ class __TwigTemplate_bb4d7f696f0293d93d0e9c1ac2002d0eed6df87c30a4bc061c8f9ac8514
 ";
     }
 
-    // line 317
+    // line 232
     public function block_page_level_scripts($context, array $blocks = array())
     {
-        // line 318
+        // line 233
         $this->displayParentBlock("page_level_scripts", $context, $blocks);
         echo "
 <!-- BEGIN PAGE LEVEL PLUGINS -->
@@ -450,6 +365,6 @@ class __TwigTemplate_bb4d7f696f0293d93d0e9c1ac2002d0eed6df87c30a4bc061c8f9ac8514
 
     public function getDebugInfo()
     {
-        return array (  420 => 318,  417 => 317,  389 => 291,  380 => 288,  376 => 287,  372 => 286,  368 => 285,  364 => 284,  360 => 283,  356 => 282,  351 => 280,  347 => 279,  344 => 278,  340 => 277,  186 => 126,  165 => 108,  144 => 90,  123 => 72,  67 => 18,  64 => 17,  59 => 14,  56 => 13,  42 => 3,  39 => 2,  11 => 1,);
+        return array (  335 => 233,  332 => 232,  304 => 206,  293 => 201,  289 => 200,  285 => 199,  281 => 198,  277 => 197,  273 => 196,  269 => 195,  265 => 194,  261 => 193,  258 => 192,  254 => 191,  186 => 126,  165 => 108,  144 => 90,  123 => 72,  67 => 18,  64 => 17,  59 => 14,  56 => 13,  42 => 3,  39 => 2,  11 => 1,);
     }
 }

@@ -3,36 +3,36 @@ var ComponentsDropdowns = function () {
     var handleSelect2 = function () {
 
         $('#select2_sample1').select2({
-            placeholder: "Select an option",
+            placeholder: "Επιλέξτε μια κατηγορία",
             allowClear: true
         });
 
         $('#select2_sample2').select2({
-            placeholder: "Select a State",
+            placeholder: "Επιλέξτε μια κατηγορία",
             allowClear: true
         });
 
-        $("#select2_sample3").select2({
-            placeholder: "Select...",
-            allowClear: true,
-            minimumInputLength: 1,
-            query: function (query) {
-                var data = {
-                    results: []
-                }, i, j, s;
-                for (i = 1; i < 5; i++) {
-                    s = "";
-                    for (j = 0; j < i; j++) {
-                        s = s + query.term;
-                    }
-                    data.results.push({
-                        id: query.term + i,
-                        text: s
-                    });
-                }
-                query.callback(data);
-            }
-        });
+        //$("#select2_sample3").select2({
+        //    placeholder: "Select...",
+        //    allowClear: true,
+        //    minimumInputLength: 1,
+        //    query: function (query) {
+        //        var data = {
+        //            results: []
+        //        }, i, j, s;
+        //        for (i = 1; i < 5; i++) {
+        //            s = "";
+        //            for (j = 0; j < i; j++) {
+        //                s = s + query.term;
+        //            }
+        //            data.results.push({
+        //                id: query.term + i,
+        //                text: s
+        //            });
+        //        }
+        //        query.callback(data);
+        //    }
+        //});
 
         function format(state) {
             if (!state.id) return state.text; // optgroup
@@ -48,8 +48,10 @@ var ComponentsDropdowns = function () {
             }
         });
 
-        $("#select2_sample5").select2({
-            tags: ["red", "green", "blue", "yellow", "pink"]
+        $("#select2_sample3").select2({
+            placeholder: "Επιλέξτε μια κατηγορία",
+            allowClear: true,
+            tags: ["Αισθητική", "Αδυνάτισμα", "Αποτρίχωση", "Κομμωτήριο", "Νύχια","Μακιγιάζ"]
         });
 
 
@@ -164,7 +166,7 @@ var ComponentsDropdowns = function () {
         });
 
         $("#select2_sample_modal_5").select2({
-            tags: ["red", "green", "blue", "yellow", "pink"]
+            tags: ["Αισθητική", "Αδυνάτισμα", "Αποτρίχωση", "Κομμωτήριο", "Νύχια","Μακιγιάζ"]
         });
 
 

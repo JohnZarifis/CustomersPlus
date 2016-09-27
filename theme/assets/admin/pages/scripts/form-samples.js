@@ -39,7 +39,7 @@ var FormSamples = function () {
             });
 
             $(".select2_sample3").select2({
-                tags: ["red", "green", "blue", "yellow", "pink"]
+               tags: ["Αισθητική", "Αδυνάτισμα", "Αποτρίχωση", "Κομμωτήριο", "Νύχια","Μακιγιάζ"]
             });
 
         }

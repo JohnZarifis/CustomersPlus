@@ -20,8 +20,8 @@
                     <div class="portlet-title">
 			<div class="caption">
 			<i class="icon-equalizer font-green-haze"></i>
-			<span class="caption-subject font-green-haze bold uppercase">ΣΤΟΙΧΕΙΑ ΑΣΘΕΝΗ</span>
-			<span class="caption-helper">{{ amka ? "ΑΜΚΑ: #{amka} "  : '' }}</span>
+			<span class="caption-subject font-green-haze bold uppercase">ΣΤΟΙΧΕΙΑ ΠΕΛΑΤΗ</span>
+			<span class="caption-helper">{{ surname ? " :  #{surname} #{name} "  : '' }}</span>
 			</div>
                             <div class="tools">
 				<a href="" class="collapse"></a>
@@ -32,36 +32,10 @@
 		    </div>
 			<div class="portlet-body form">
 			<!-- BEGIN FORM-->
-			<form action="patientHandling.php" class="form-horizontal" method="post">
+			<form action="customerHandling.php" class="form-horizontal" method="post">
                             <div class="form-body">
-                            <h3 class="form-section">Στοιχεία Ασθενή</h3>
-				<div class="row">
-                                    <div class="col-md-6">
-					<div class="form-group">
-                                            <label class="control-label col-md-3">ΑΜΚΑ</label>
-                                            <div class="col-md-9">
-                                             <input type="text" class="form-control" required pattern="[0-9]{11}" name ="amka" value="{{amka}}">
-					    
-                                            </div>
-					</div>
-                                    </div>
-                                    <!--/span-->
-                                    <div class="col-md-6">
-					<div class="form-group">
-					<label class="control-label col-md-3">Φύλο</label>
-					<div class="col-md-9">
-					<select class="form-control">
-					<option {{ gender =="'Ανδρας" ? 'selected':''}} value="'Ανδρας">'Ανδρας</option>
-					<option {{ gender =="Γυναίκα" ? 'selected':''}} value="Γυναίκα">Γυναίκα</option>
-					</select>
-					
-					</div>
-					</div>
-                                    </div>
-                                    <!--/span-->                                                                    
-				</div>
-				<!--/row-->
-                                <div class="row">
+                            <h3 class="form-section">Στοιχεία Πελάτη</h3>
+							                               <div class="row">
                                     <div class="col-md-6">
                                     <div class="form-group">
                                     <label class="control-label col-md-3">Όνομα</label>
@@ -82,12 +56,38 @@
 				</div>
                                 <!--/row-->
 				<div class="row">
-                                        <!--/span-->
-                                        <div class="col-md-6">
-                                            <div class="form-group">
+                                    <div class="col-md-6">
+				                        <div class="form-group">
                                             <label class="control-label col-md-3">Τηλέφωνο-1</label>
                                             <div class="col-md-9">
                                                 <input type="text" class="form-control" name="phone1" value="{{phone1}}" pattern="[0-9]{10}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--/span-->
+                                    <div class="col-md-6">
+					<div class="form-group">
+					<label class="control-label col-md-3">Φύλο</label>
+					<div class="col-md-9">
+					<select class="form-control">
+					<option {{ gender =="'Ανδρας" ? 'selected':''}} value="'Ανδρας">'Ανδρας</option>
+					<option {{ gender =="Γυναίκα" ? 'selected':''}} value="Γυναίκα">Γυναίκα</option>
+					</select>
+					
+					</div>
+					</div>
+                                    </div>
+                                    <!--/span-->                                                                    
+				</div>
+				<!--/row-->
+ 
+				<div class="row">
+                                        <!--/span-->
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                            <label class="control-label col-md-3">Τηλέφωνο-2</label>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" name="phone2" value="{{phone2}}" pattern="[0-9]{10}">
                                             </div>
                                             </div>
                                         </div>
@@ -95,9 +95,9 @@
                                         <!--/span-->
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                            <label class="control-label col-md-3">Τηλέφωνο-2</label>
+                                            <label class="control-label col-md-3">Τηλέφωνο-3</label>
                                             <div class="col-md-9">
-                                                <input type="text" class="form-control" name="phone2" value="{{phone2}}" pattern="[0-9]{10}">
+                                                <input type="text" class="form-control" name="phone3" value="{{phone3}}" pattern="[0-9]{10}">
                                             </div>
                                             </div>
                                         </div>
@@ -109,7 +109,7 @@
                                             <div class="form-group">
                                             <label class="control-label col-md-3">Διεύθυνση</label>
                                             <div class="col-md-9">
-                                            <input type="text" class="form-control" name="adrress" value="{{adrress}}">
+                                            <input type="text" class="form-control" name="address" value="{{address}}">
                                             </div>
                                             </div>
 
@@ -132,9 +132,9 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                         <div class="form-group">
-                                        <label class="control-label col-md-3">Παρούσα Νόσος / Αρχική Διάγνωση :</label>
+                                        <label class="control-label col-md-3">Λοιπά Σχόλια  / Μετρήσεις :</label>
                                         <div class="col-md-12">
-                                        <textarea class="form-control" rows="3" name="disease">{{disease}}</textarea>
+                                        <textarea class="form-control" rows="3" name="">{{comments}}</textarea>
                                         
                                         </div>
                                         </div>                                    
@@ -201,10 +201,10 @@
                                         <div class="col-md-9">
                                         <div class="radio-list">
                                         <label class="radio-inline">
-                                        <input type="radio" name="morediseases" value="1" {{ morediseases == 1 ? 'checked':''}} />
+                                        <input type="radio" name="diseases" value="1" {{ diseases == 1 ? 'checked':''}} />
                                         Ναι </label>
                                         <label class="radio-inline">
-                                        <input type="radio" name="morediseases" value="0" {{ morediseases == 0 ? 'checked':''}} />
+                                        <input type="radio" name="diseases" value="0" {{ diseases == 0 ? 'checked':''}} />
                                         Όχι </label>
                                         </div>
                                         </div>
@@ -216,12 +216,12 @@
 				
 				<!--/row-->
 				<div class="row">                                                                                           
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
                                         <div class="form-group">
-                                        <label class="control-label col-md-3">Λοιπές Παθήσεις</label>
+                                        <label class="control-label col-md-3"> Κατηγορίες</label>
                                         <div class="col-md-9">
-                                        <input type="hidden" class="form-control select2_sample3" 
-                                            value="{{ amka ? "#{moredisdescr}"  : 'Αρτηριακή Υπέρταση, Σακχαρώδης Διαβήτης,Δυσλιπιδιαμία,Υποθυρεοειδισμός,Υπερθυρεοειδισμός' }}"
+                                        <input type="hidden" class="form-control select2_sample3"  name="categories"
+                                            value="{{ id ? "#{categories}"  : 'Αισθητική , Αδυνάτισμα,Αποτρίχωση,Κομμωτήριο,Νύχια,Μακιγιάζ' }}"
                                             
                                             
                                             >
@@ -229,44 +229,26 @@
                                         </div>
                                     </div>
 				<!--/span-->
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-					<label class="control-label col-md-3">ΛΟΙΠΕΣ ΠΑΘΗΣΕΙΣ</label>
-					<div class="col-md-9">
-					<select class="form-control select2_sample1" multiple>
-                                            <optgroup label="ΠΑΘΗΣΕΙΣ">
-						<option>Αρτηριακή Υπέρταση</option>
-						<option>Σακχαρώδης Διαβήτης</option>
-						<option>Δυσλιπιδιαμία</option>
-						
-                                            </optgroup>
-                                            <optgroup label="ΘΥΡΟΕΙΔΗΣ">
-						<option>Υποθυρεοειδισμός</option>
-						<option>Υπερθυρεοειδισμός</option>						
-                                            </optgroup>															
-					</select>
-					</div>
-					</div>
-                                    </div>
+        
 				<!--/span-->
 				</div>
-                                <h3 class="form-section">Οικογενειακό Ιστορικό:</h3>
+                                <h3 class="form-section">Σωματομετρικά Χαρακτηριστικά:</h3>
                                 <!--/row-->
                                 <div class="row">
                                     <div class="col-md-6">
                                     <div class="form-group">
-                                    <label class="control-label col-md-3">Μητέρα</label>
+                                    <label class="control-label col-md-3">Υψος</label>
                                     <div class="col-md-9">
-                                        <input type="text" class="form-control" name="motherHist" value="{{motherHist}}">
+                                        <input type="text" class="form-control" name="height" value="{{height}}">
                                     </div>
                                     </div>
                                     </div>
                                     <!--/span--> 
                                     <div class="col-md-6">
                                     <div class="form-group">
-                                    <label class="control-label col-md-3">Πατέρας</label>
+                                    <label class="control-label col-md-3">Βάρος</label>
                                     <div class="col-md-9">
-                                    <input type="text" class="form-control" name="fatherHist" value="{{fatherHist}}">
+                                    <input type="text" class="form-control" name="weight" value="{{weight}}">
                                     </div>
                                     </div>
                                     </div>
@@ -275,18 +257,18 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                     <div class="form-group">
-                                    <label class="control-label col-md-3">Αδέρφια</label>
+                                    <label class="control-label col-md-3">% Λίπους</label>
                                     <div class="col-md-9">
-                                        <input type="text" class="form-control" name="brotherHist" value="{{brotherHist}}">
+                                        <input type="text" class="form-control" name="bodyfat" value="{{bodyfat}}">
                                     </div>
                                     </div>
                                     </div>
                                     <!--/span--> 
                                     <div class="col-md-6">
                                     <div class="form-group">
-                                    <label class="control-label col-md-3">Άλλοι</label>
+                                    <label class="control-label col-md-3">Λοιπές Μετρήσεις</label>
                                     <div class="col-md-9">
-                                    <input type="text" class="form-control" name="restHist" value="{{restHist}}">
+                                    <input type="text" class="form-control" name="measurments" value="{{measurments}}">
                                     </div>
                                     </div>
                                     </div>
@@ -330,8 +312,7 @@
                                         <div class="col-md-6">
                                         <div class="row">
                                         <div class="col-md-offset-3 col-md-9">
-                                        <button type="submit" class="btn green" name="exam">Νέα εξέταση</button>
-                                        <button type="submit" class="btn blue-madison" name="save" >Submit</button>
+                                        <button type="submit" class="btn blue-madison" name="save" >Αποθήκευση</button>
                                         <button type="button" class="btn red">Cancel</button>
                                         </div>
                                         </div>

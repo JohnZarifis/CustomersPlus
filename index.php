@@ -12,7 +12,7 @@ $id = $_SESSION['user_id'];
 //print_r($_SESSION); 
 
 
-$sql = "SELECT id, name ,surname,birthdate ,address,phone1,phone2,phone3 FROM customers";
+$sql = "SELECT id, name ,surname,DATE_FORMAT(birthdate,'%d-%m-%Y') as birthdate ,address,phone1,phone2,phone3 FROM customers";
 
 
 $result_set = $database->query($sql);

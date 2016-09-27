@@ -69,7 +69,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <!-- BEGIN LOGO -->
 <div class=\"logo\">
 \t<a href=\"index.php\">
-\t<img src=\"theme/assets/admin/layout/img/mslogo.jpg\" alt=\"\"/>
+\t<img src=\"theme/assets/admin/layout/img/logo_over - main.png\" alt=\"\"/>
 \t</a>
 </div>
 <!-- END LOGO -->

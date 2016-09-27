@@ -82,7 +82,8 @@ class __TwigTemplate_bce42d22cad9f71694505dbc865ad42f38f603d33f9ebb3afabf6701d83
     <!-- DOC: Apply \"page-footer-fixed\" class to the body element to have fixed footer -->
     <!-- DOC: Apply \"page-sidebar-reversed\" class to put the sidebar on the right side -->
     <!-- DOC: Apply \"page-full-width\" class to the body element to have full width page without the sidebar menu -->
-    <body class=\"page-header-fixed page-quick-sidebar-over-content page-style-square\">
+   <!-- <body class=\"page-header-fixed page-quick-sidebar-over-content page-style-square\">-->
+    <body class=\"page-header-fixed page-sidebar-closed page-style-square\">
 
     <!-- BEGIN HEADER -->
     <div class=\"page-header navbar navbar-fixed-top\">
@@ -91,7 +92,7 @@ class __TwigTemplate_bce42d22cad9f71694505dbc865ad42f38f603d33f9ebb3afabf6701d83
             <!-- BEGIN LOGO -->
             <div class=\"page-logo\">
                 <a href=\"index.php\">
-                <img src=\"theme/assets/admin/layout/img/logo.jpg\" alt=\"logo\" class=\"logo-default\"/>
+                <img src=\"theme/assets/admin/layout/img/logo_over.png\" alt=\"logo\" class=\"logo-default\"/>
                 </a>
                 <div class=\"menu-toggler sidebar-toggler hide\">
                     <!-- DOC: Remove the above \"hide\" to enable the sidebar toggler button on header -->
@@ -112,7 +113,7 @@ class __TwigTemplate_bce42d22cad9f71694505dbc865ad42f38f603d33f9ebb3afabf6701d83
                         <img alt=\"\" class=\"img-circle\" src=\"theme/assets/admin/layout/img/avatar3_small.jpg\"/>
                         <span class=\"username username-hide-on-mobile\">
                         ";
-        // line 97
+        // line 98
         echo twig_escape_filter($this->env, (isset($context["username"]) ? $context["username"] : null), "html", null, true);
         echo " </span>
                         <i class=\"fa fa-angle-down\"></i>
@@ -157,84 +158,28 @@ class __TwigTemplate_bce42d22cad9f71694505dbc865ad42f38f603d33f9ebb3afabf6701d83
 \t\t\t\t\t<!-- END SIDEBAR TOGGLER BUTTON -->
 \t\t\t\t</li>
 \t\t\t\t<!-- DOC: To remove the search box from the sidebar you just need to completely remove the below \"sidebar-search-wrapper\" LI element -->
-\t\t\t\t<li class=\"sidebar-search-wrapper\">
-\t\t\t\t\t<!-- BEGIN RESPONSIVE QUICK SEARCH FORM -->
-\t\t\t\t\t<!-- DOC: Apply \"sidebar-search-bordered\" class the below search form to have bordered search box -->
-\t\t\t\t\t<!-- DOC: Apply \"sidebar-search-bordered sidebar-search-solid\" class the below search form to have bordered & solid search box -->
-\t\t\t\t\t<form class=\"sidebar-search \" action=\"extra_search.html\" method=\"POST\">
-\t\t\t\t\t\t<a href=\"javascript:;\" class=\"remove\">
-\t\t\t\t\t\t<i class=\"icon-close\"></i>
-\t\t\t\t\t\t</a>
-\t\t\t\t\t\t<div class=\"input-group\">
-\t\t\t\t\t\t\t<input type=\"text\" class=\"form-control\" placeholder=\"Search...\">
-\t\t\t\t\t\t\t<span class=\"input-group-btn\">
-\t\t\t\t\t\t\t<a href=\"javascript:;\" class=\"btn submit\"><i class=\"icon-magnifier\"></i></a>
-\t\t\t\t\t\t\t</span>
-\t\t\t\t\t\t</div>
-\t\t\t\t\t</form>
-\t\t\t\t\t<!-- END RESPONSIVE QUICK SEARCH FORM -->
-\t\t\t\t</li>
-\t\t\t\t<li class=\"start active open\">
-\t\t\t\t\t<a href=\"javascript:;\">
-\t\t\t\t\t<i class=\"icon-home\"></i>
-\t\t\t\t\t<span class=\"title\">Dashboard</span>
-\t\t\t\t\t<span class=\"selected\"></span>
-\t\t\t\t\t<span class=\"arrow open\"></span>
-\t\t\t\t\t</a>
-\t\t\t\t\t<ul class=\"sub-menu\">
-\t\t\t\t\t\t<li class=\"active\">
-\t\t\t\t\t\t\t<a href=\"index.php\">
-\t\t\t\t\t\t\t<i class=\"icon-users\"></i>
-\t\t\t\t\t\t\tDashboard</a>
-\t\t\t\t\t\t</li>
-\t\t\t\t\t\t
-\t\t\t\t\t</ul>
-\t\t\t\t</li>
+
 \t\t\t\t<li>
 \t\t\t\t\t<a href=\"javascript:;\">
 \t\t\t\t\t<i class=\"icon-users\"></i>
-\t\t\t\t\t<span class=\"title\">Ασθενείς</span>
+\t\t\t\t\t<span class=\"title\">Πελάτες</span>
 \t\t\t\t\t<span class=\"arrow \"></span>
 \t\t\t\t\t</a>
                                     <ul class=\"sub-menu\">
 \t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t<a href=\"patient.php\">
+\t\t\t\t\t\t\t<a href=\"customer.php\">
                                                         <i class=\"icon-user-follow \"></i>
-\t\t\t\t\t\t\tΝέος Ασθενής</a>
+\t\t\t\t\t\t\tΝέος Πελάτης</a>
 \t\t\t\t\t\t</li>
 \t\t\t\t\t\t<li>
 \t\t\t\t\t\t\t<a href=\"index.php\">
                                                         <i class=\"icon-users\"></i>
-\t\t\t\t\t\t\tΑρχείο Ασθενών</a>
+\t\t\t\t\t\t\tΑρχείο Πελατών</a>
 \t\t\t\t\t\t</li>
 \t\t\t\t\t</ul>
 \t\t\t\t\t
 \t\t\t\t</li>
-\t\t\t\t
-\t\t\t\t
-\t\t\t\t
-
-\t\t\t\t<li class=\"heading\">
-\t\t\t\t\t<h3 class=\"uppercase\">ΣΤΑΤΙΣΤΙΚΑ</h3>
-\t\t\t\t</li>\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t
-\t\t\t\t
-\t\t\t\t<li class=\"last \">
-\t\t\t\t\t<a href=\"javascript:;\">
-\t\t\t\t\t<i class=\"icon-pointer\"></i>
-\t\t\t\t\t<span class=\"title\">Εξετάσεις</span>
-\t\t\t\t\t<span class=\"arrow \"></span>
-\t\t\t\t\t</a>
-\t\t\t\t\t<ul class=\"sub-menu\">
-\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t<a href=\"maps_google.html\">
-\t\t\t\t\t\t\t'Εντυπα</a>
-\t\t\t\t\t\t</li>
-\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t<a href=\"uploadFile.php\">
-\t\t\t\t\t\t\tΕπισύναψη Αρχείων</a>
-\t\t\t\t\t\t</li>
-\t\t\t\t\t</ul>
-\t\t\t\t</li>
+\t
 \t\t\t</ul>
 \t\t\t<!-- END SIDEBAR MENU -->
 \t\t</div>
@@ -243,9 +188,9 @@ class __TwigTemplate_bce42d22cad9f71694505dbc865ad42f38f603d33f9ebb3afabf6701d83
 \t    <!-- END SIDEBAR -->
 \t\t<!-- BEGIN CONTENT -->
 \t\t";
-        // line 225
+        // line 170
         $this->displayBlock('content', $context, $blocks);
-        // line 227
+        // line 172
         echo "        <!-- END CONTENT -->
 \t</div>
 
@@ -301,9 +246,9 @@ class __TwigTemplate_bce42d22cad9f71694505dbc865ad42f38f603d33f9ebb3afabf6701d83
 
 <!-- END PAGE LEVEL PLUGINS -->
 ";
-        // line 281
+        // line 226
         $this->displayBlock('page_level_scripts', $context, $blocks);
-        // line 295
+        // line 240
         echo "<script>
 jQuery(document).ready(function() {
    Metronic.init(); // init metronic core componets
@@ -351,17 +296,17 @@ jQuery(document).ready(function() {
         ";
     }
 
-    // line 225
+    // line 170
     public function block_content($context, array $blocks = array())
     {
-        // line 226
+        // line 171
         echo "\t\t";
     }
 
-    // line 281
+    // line 226
     public function block_page_level_scripts($context, array $blocks = array())
     {
-        // line 282
+        // line 227
         echo "<!-- BEGIN PAGE LEVEL SCRIPTS -->
 <script src=\"theme/assets/global/scripts/metronic.js\" type=\"text/javascript\"></script>
 <script src=\"theme/assets/admin/layout/scripts/layout.js\" type=\"text/javascript\"></script>
@@ -389,6 +334,6 @@ jQuery(document).ready(function() {
 
     public function getDebugInfo()
     {
-        return array (  365 => 282,  362 => 281,  358 => 226,  355 => 225,  342 => 32,  339 => 31,  335 => 13,  332 => 12,  307 => 295,  305 => 281,  249 => 227,  247 => 225,  116 => 97,  59 => 42,  57 => 31,  38 => 14,  36 => 12,  23 => 1,);
+        return array (  310 => 227,  307 => 226,  303 => 171,  300 => 170,  287 => 32,  284 => 31,  280 => 13,  277 => 12,  252 => 240,  250 => 226,  194 => 172,  192 => 170,  117 => 98,  59 => 42,  57 => 31,  38 => 14,  36 => 12,  23 => 1,);
     }
 }
