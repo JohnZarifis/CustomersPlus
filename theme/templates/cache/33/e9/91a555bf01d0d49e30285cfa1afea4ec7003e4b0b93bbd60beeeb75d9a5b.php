@@ -206,7 +206,7 @@ class __TwigTemplate_33e991a555bf01d0d49e30285cfa1afea4ec7003e4b0b93bbd60beeeb75
 \t\t\t\t\t<div class=\"portlet box blue-hoki\">
 \t\t\t\t\t\t<div class=\"portlet-title\">
 \t\t\t\t\t\t\t<div class=\"caption\">
-\t\t\t\t\t\t\t\t<i class=\"fa fa-globe\"></i>Πίνακας Πελατών
+\t\t\t\t\t\t\t\t<i class=\"fa fa-globe\"></i>Πίνακας Πελατών  <a href=\"customer.php\" class=\"btn red\"  > Νέος Πελάτης  </a>
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t
 \t\t\t\t\t\t</div>
@@ -217,78 +217,77 @@ class __TwigTemplate_33e991a555bf01d0d49e30285cfa1afea4ec7003e4b0b93bbd60beeeb75
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t<th>
 \t\t\t\t\t\t\t\t\t ΟΝΟΜΑ
-\t\t\t\t\t\t\t\t</th>
-                                                                <th>
+\t\t\t\t\t\t\t\t  </th>
+                                  <th>
 \t\t\t\t\t\t\t\t\t ΕΠΩΝΥΜΟ
-\t\t\t\t\t\t\t\t</th>
-\t\t\t\t\t\t\t\t<th>
-\t\t\t\t\t\t\t\t\t ΗΜ. ΓΕΝΝΗΣΗΣ
-\t\t\t\t\t\t\t\t</th>
-                                                                
-\t\t\t\t\t\t\t\t<th>
-\t\t\t\t\t\t\t\t\t Διεύθυνση
-\t\t\t\t\t\t\t\t</th>
-                                <th>
-\t\t\t\t\t\t\t\t\t Τηλέφωνο 1
-\t\t\t\t\t\t\t\t</th>
+\t\t\t\t\t\t\t\t  </th>
 \t\t\t\t\t\t\t\t  <th>
-\t\t\t\t\t\t\t\t\t Τηλέφωνο 2
-\t\t\t\t\t\t\t\t</th>
+\t\t\t\t\t\t\t\t\t ΗΜ. ΓΕΝΝΗΣΗΣ
+\t\t\t\t\t\t\t\t  </th>                                                              
+\t\t\t\t\t\t\t\t   <th>
+\t\t\t\t\t\t\t\t\t Διεύθυνση
+\t\t\t\t\t\t\t\t   </th>
+                                    <th>
+\t\t\t\t\t\t\t\t\t Τηλέφωνο 1
+\t\t\t\t\t\t\t\t    </th>
 \t\t\t\t\t\t\t\t    <th>
-\t\t\t\t\t\t\t\t\t Τηλέφωνο 3
-\t\t\t\t\t\t\t\t</th>
-\t\t\t\t\t\t\t\t\t  <th>
-\t\t\t\t\t\t\t\t    Φύλο
-\t\t\t\t\t\t\t\t</th>
-                                <th>
+\t\t\t\t\t\t\t\t\t Τηλέφωνο 2
+\t\t\t\t\t\t\t\t    </th>
+\t\t\t\t\t\t\t\t    <th>
+\t\t\t\t\t\t\t\t\t Email
+\t\t\t\t\t\t\t\t   </th>
+\t\t\t\t\t\t\t\t   <th>
+\t\t\t\t\t\t\t\t      Φύλο
+\t\t\t\t\t\t\t\t    </th>
+                                   <th>
                                     Στοιχεία\t
-\t\t\t\t\t\t\t\t</th>
+\t\t\t\t\t\t\t\t   </th>
                                 
                                  
 \t\t\t\t\t\t\t</tr>
 \t\t\t\t\t\t\t</thead>
 \t\t\t\t\t\t\t<tbody>
                                                             ";
-        // line 190
+        // line 189
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["res"]) ? $context["res"] : null));
         foreach ($context['_seq'] as $context["_key"] => $context["row"]) {
-            // line 191
+            // line 190
             echo "                                                         <tr>
                                                          <td>";
-            // line 192
+            // line 191
             echo twig_escape_filter($this->env, $this->getAttribute($context["row"], "name", array(), "array"), "html", null, true);
             echo "</td>
                                                          <td>";
-            // line 193
+            // line 192
             echo twig_escape_filter($this->env, $this->getAttribute($context["row"], "surname", array(), "array"), "html", null, true);
             echo "</td>
                                                          <td>";
-            // line 194
+            // line 193
             echo twig_escape_filter($this->env, $this->getAttribute($context["row"], "birthdate", array(), "array"), "html", null, true);
             echo "</td> 
                                                          <td>";
-            // line 195
+            // line 194
             echo twig_escape_filter($this->env, $this->getAttribute($context["row"], "address", array(), "array"), "html", null, true);
             echo "</td>
                                                          <td>";
-            // line 196
+            // line 195
             echo twig_escape_filter($this->env, $this->getAttribute($context["row"], "phone1", array(), "array"), "html", null, true);
             echo "</td>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t  <td>";
-            // line 197
+            // line 196
             echo twig_escape_filter($this->env, $this->getAttribute($context["row"], "phone2", array(), "array"), "html", null, true);
             echo "</td>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t   <td>";
-            // line 198
-            echo twig_escape_filter($this->env, $this->getAttribute($context["row"], "phone3", array(), "array"), "html", null, true);
+            // line 197
+            echo twig_escape_filter($this->env, $this->getAttribute($context["row"], "email", array(), "array"), "html", null, true);
             echo "</td>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t   <td>";
-            // line 199
+            // line 198
             echo twig_escape_filter($this->env, $this->getAttribute($context["row"], "gender", array(), "array"), "html", null, true);
             echo "</td>
                                                          <td><a href=\"customer.php?id=";
-            // line 200
+            // line 199
             echo twig_escape_filter($this->env, $this->getAttribute($context["row"], "id", array(), "array"), "html", null, true);
             echo "\"><span class=\"label label-warning\">Αλλαγή Στοιχείων </span></a></td>
                                                                                                    
@@ -299,7 +298,7 @@ class __TwigTemplate_33e991a555bf01d0d49e30285cfa1afea4ec7003e4b0b93bbd60beeeb75
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['row'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 205
+        // line 204
         echo "\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t</tbody>
 \t\t\t\t\t\t\t</table>
@@ -327,10 +326,10 @@ class __TwigTemplate_33e991a555bf01d0d49e30285cfa1afea4ec7003e4b0b93bbd60beeeb75
 ";
     }
 
-    // line 231
+    // line 230
     public function block_page_level_scripts($context, array $blocks = array())
     {
-        // line 232
+        // line 231
         $this->displayParentBlock("page_level_scripts", $context, $blocks);
         echo "
 <!-- BEGIN PAGE LEVEL PLUGINS -->
@@ -364,6 +363,6 @@ class __TwigTemplate_33e991a555bf01d0d49e30285cfa1afea4ec7003e4b0b93bbd60beeeb75
 
     public function getDebugInfo()
     {
-        return array (  334 => 232,  331 => 231,  303 => 205,  292 => 200,  288 => 199,  284 => 198,  280 => 197,  276 => 196,  272 => 195,  268 => 194,  264 => 193,  260 => 192,  257 => 191,  253 => 190,  186 => 126,  165 => 108,  144 => 90,  123 => 72,  67 => 18,  64 => 17,  59 => 14,  56 => 13,  42 => 3,  39 => 2,  11 => 1,);
+        return array (  333 => 231,  330 => 230,  302 => 204,  291 => 199,  287 => 198,  283 => 197,  279 => 196,  275 => 195,  271 => 194,  267 => 193,  263 => 192,  259 => 191,  256 => 190,  252 => 189,  186 => 126,  165 => 108,  144 => 90,  123 => 72,  67 => 18,  64 => 17,  59 => 14,  56 => 13,  42 => 3,  39 => 2,  11 => 1,);
     }
 }

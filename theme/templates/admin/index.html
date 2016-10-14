@@ -145,7 +145,7 @@
 					<div class="portlet box blue-hoki">
 						<div class="portlet-title">
 							<div class="caption">
-								<i class="fa fa-globe"></i>Πίνακας Πελατών
+								<i class="fa fa-globe"></i>Πίνακας Πελατών  <a href="customer.php" class="btn red"  > Νέος Πελάτης  </a>
 							</div>
 						
 						</div>
@@ -156,32 +156,31 @@
 																
 								<th>
 									 ΟΝΟΜΑ
-								</th>
-                                                                <th>
+								  </th>
+                                  <th>
 									 ΕΠΩΝΥΜΟ
-								</th>
-								<th>
-									 ΗΜ. ΓΕΝΝΗΣΗΣ
-								</th>
-                                                                
-								<th>
-									 Διεύθυνση
-								</th>
-                                <th>
-									 Τηλέφωνο 1
-								</th>
+								  </th>
 								  <th>
-									 Τηλέφωνο 2
-								</th>
+									 ΗΜ. ΓΕΝΝΗΣΗΣ
+								  </th>                                                              
+								   <th>
+									 Διεύθυνση
+								   </th>
+                                    <th>
+									 Τηλέφωνο 1
+								    </th>
 								    <th>
-									 Τηλέφωνο 3
-								</th>
-									  <th>
-								    Φύλο
-								</th>
-                                <th>
+									 Τηλέφωνο 2
+								    </th>
+								    <th>
+									 Email
+								   </th>
+								   <th>
+								      Φύλο
+								    </th>
+                                   <th>
                                     Στοιχεία	
-								</th>
+								   </th>
                                 
                                  
 							</tr>
@@ -195,7 +194,7 @@
                                                          <td>{{ row['address']}}</td>
                                                          <td>{{ row['phone1']}}</td>
 														  <td>{{ row['phone2']}}</td>
-														   <td>{{ row['phone3']}}</td>
+														   <td>{{ row['email']}}</td>
 														   <td>{{ row['gender']}}</td>
                                                          <td><a href="customer.php?id={{row['id']}}"><span class="label label-warning">Αλλαγή Στοιχείων </span></a></td>
                                                                                                    

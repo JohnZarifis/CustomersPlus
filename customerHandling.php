@@ -28,7 +28,7 @@ $birthdate = $_POST['birthdate'];
 $address = mysql_real_escape_string($_POST['address']);
 $phone1 = $_POST['phone1'];
 $phone2 = $_POST['phone2'];
-$phone3 = $_POST['phone3'];
+$email = $_POST['email'];
 $gender = mysql_real_escape_string($_POST['gender']);
 $height  = mysql_real_escape_string($_POST['height']);
 $weight = mysql_real_escape_string($_POST['weight']);
@@ -49,10 +49,10 @@ $birthdate = preg_replace('#(\d{2})-(\d{2})-(\d{4})#', '$3-$2-$1', $birthdate);
 if (empty($_POST['id']) ) {
 
  $sql =   "insert into customers(name, surname, birthdate,"
-             ." address, phone1, phone2, phone3, gender, height, weight,"
+             ." address, phone1, phone2, email, gender, height, weight,"
              ."bodyfat, measurments, categories, comments,alcohol, alergies, smoking, diseases) VALUES  "
 			 ."  ('{$name}'  , '{$surname}', '{$birthdate}' , '{$address}',   '{$phone1}', '{$phone2}'   ,   "
-			 ."   '{$phone3}', '{$gender}', '{$height}', '{$weight}' ,   '{$bodyfat}', '{$measurments}' , '{$categories}', '{$comments}' ,   "
+			 ."   '{$email}', '{$gender}', '{$height}', '{$weight}' ,   '{$bodyfat}', '{$measurments}' , '{$categories}', '{$comments}' ,   "
 			 ."    {$alcohol}   ,   {$alergies}  , {$smoking}  ,   {$diseases}  ) ";
 //            
 //print($sql)	;
@@ -62,7 +62,7 @@ $database->query($sql);
 else{
      $id =  $_POST['id'];
     $sql = "update customers set  name = '{$name}', surname = '{$surname}' , birthdate = '{$birthdate}' ,  address =  '{$address}' ,   "
-	." phone1=  '{$phone1}', phone2 =   '{$phone2}' ,  phone3 =  '{$phone3}' ,  gender =  '{$gender}' ,  height = '{$height}' ,  weight = '{$weight}' ,  bodyfat = '{$bodyfat}' , "
+	." phone1=  '{$phone1}', phone2 =   '{$phone2}' ,  email =  '{$email}' ,  gender =  '{$gender}' ,  height = '{$height}' ,  weight = '{$weight}' ,  bodyfat = '{$bodyfat}' , "
 	." measurments = '{$measurments}' ,  categories =  '{$categories}' , comments = '{$comments}' , alcohol =  {$alcohol} , alergies =  {$alergies} , smoking = {$smoking},  diseases =  {$diseases}   "
 	." where id = {$id}";
 	print($sql)	;

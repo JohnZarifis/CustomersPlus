@@ -14,7 +14,7 @@ $id = $_SESSION['user_id'];
 
 //$sql = "SELECT id, name ,surname,DATE_FORMAT(birthdate,'%d-%m-%Y') as birthdate ,address,phone1,phone2,phone3, gender FROM customers";
 
-$sql = "SELECT id, name ,surname,DATE_FORMAT(birthdate,'%d-%m-%Y') as birthdate ,address,phone1,phone2,phone3, gender , "
+$sql = "SELECT id, name ,surname,DATE_FORMAT(birthdate,'%d-%m-%Y') as birthdate ,address,phone1,phone2,email, gender , "
           ." IF(DATE_FORMAT(birthDate,'%m-%d') = DATE_FORMAT(NOW(),'%m-%d'), 1, 0) as bday, "
           ." IF(GENDER = 'Γυναίκα',1,0) as isfemale, "
           ." IF(GENDER = 'Γυναίκα',0,1) as ismale "
@@ -31,7 +31,7 @@ while ($row = mysql_fetch_assoc($result_set))
                                                     'address'=>$row['address'],
                                                     'phone1'=>$row['phone1'],
                                                     'phone2'=>$row['phone2'],
-													'phone3'=>$row['phone3'],
+													'email'=>$row['email'],
 													'gender'=>$row['gender'],
 													'bday'=>$row['bday'],
 													'isfemale' => $row['isfemale'],

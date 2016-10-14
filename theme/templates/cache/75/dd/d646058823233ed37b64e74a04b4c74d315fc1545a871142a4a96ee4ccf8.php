@@ -87,7 +87,7 @@ class __TwigTemplate_75ddd646058823233ed37b64e74a04b4c74d315fc1545a871142a4a96ee
 \t\t\t<!-- BEGIN FORM-->
 \t\t\t<form action=\"customerHandling.php\" class=\"form-horizontal\" method=\"post\">
                             <div class=\"form-body\">
-                            <h3 class=\"form-section\">Στοιχεία Πελάτη</h3>
+                            <!--<h3 class=\"form-section\">Στοιχεία Πελάτη</h3>-->
 \t\t\t\t\t\t\t                               <div class=\"row\">
                                     <div class=\"col-md-6\">
                                     <div class=\"form-group\">
@@ -165,13 +165,16 @@ class __TwigTemplate_75ddd646058823233ed37b64e74a04b4c74d315fc1545a871142a4a96ee
                                         
                                         <!--/span-->
                                         <div class=\"col-md-6\">
-                                            <div class=\"form-group\">
-                                            <label class=\"control-label col-md-3\">Τηλέφωνο-3</label>
+\t\t\t\t\t\t\t\t\t\t\t <div class=\"form-group\">
+                                            <label class=\"control-label col-md-3\">Ημ.Γέννησης</label>
                                             <div class=\"col-md-9\">
-                                                <input type=\"text\" class=\"form-control\" name=\"phone3\" value=\"";
-        // line 100
-        echo twig_escape_filter($this->env, (isset($context["phone3"]) ? $context["phone3"] : null), "html", null, true);
-        echo "\" pattern=\"[0-9]{10}\">
+                                            <input type=\"text\" class=\"form-control\" 
+\t\t\t\t\t\t\t\t\t\t\t\tpattern=\"(0[1-9]|1[0-9]|2[0-9]|3[01])-(0[1-9]|1[012])-[0-9]{4}\"
+                                                   placeholder=\"ΗΗ-ΜΜ-ΕΕΕΕ\"
+                                                   name=\"birthdate\" value=\"";
+        // line 103
+        echo twig_escape_filter($this->env, (isset($context["birthdate"]) ? $context["birthdate"] : null), "html", null, true);
+        echo "\">
                                             </div>
                                             </div>
                                         </div>
@@ -184,7 +187,7 @@ class __TwigTemplate_75ddd646058823233ed37b64e74a04b4c74d315fc1545a871142a4a96ee
                                             <label class=\"control-label col-md-3\">Διεύθυνση</label>
                                             <div class=\"col-md-9\">
                                             <input type=\"text\" class=\"form-control\" name=\"address\" value=\"";
-        // line 112
+        // line 115
         echo twig_escape_filter($this->env, (isset($context["address"]) ? $context["address"] : null), "html", null, true);
         echo "\">
                                             </div>
@@ -194,19 +197,81 @@ class __TwigTemplate_75ddd646058823233ed37b64e74a04b4c74d315fc1545a871142a4a96ee
 \t\t\t\t\t
 \t\t\t\t\t<!--/span-->
 \t\t\t\t\t<div class=\"col-md-6\">
+                              <div class=\"form-group\">
+                                            <label class=\"control-label col-md-3\">T.K.</label>
+                                            <div class=\"col-md-9\">
+                                            <input type=\"text\" class=\"form-control\" name=\"zipcode\" value=\"";
+        // line 126
+        echo twig_escape_filter($this->env, (isset($context["zipcode"]) ? $context["zipcode"] : null), "html", null, true);
+        echo "\">
+                                            </div>
+                                            </div>             
+\t\t\t\t\t</div>
+\t\t\t\t\t<!--/span-->
+                                    </div>
+\t\t\t\t\t\t\t\t\t <!--/row-->
+\t\t\t\t\t\t\t\t\t<div class=\"row\">
+                                        <div class=\"col-md-6\">
                                             <div class=\"form-group\">
-                                            <label class=\"control-label col-md-3\">Ημ.Γέννησης</label>
+                                            <label class=\"control-label col-md-3\">Περιοχή</label>
+                                            <div class=\"col-md-9\">
+                                            <input type=\"text\" class=\"form-control\" name=\"region\" value=\"";
+        // line 138
+        echo twig_escape_filter($this->env, (isset($context["region"]) ? $context["region"] : null), "html", null, true);
+        echo "\">
+                                            </div>
+                                            </div>
+
+                                        </div>
+\t\t\t\t\t
+\t\t\t\t\t<!--/span-->
+\t\t\t\t\t<div class=\"col-md-6\">
+                                            <div class=\"form-group\">
+                                            <label class=\"control-label col-md-3\">Επάγγελμα</label>
                                             <div class=\"col-md-9\">
                                             <input type=\"text\" class=\"form-control\" 
-\t\t\t\t\t\t\t\t\t\t\t\tpattern=\"(0[1-9]|1[0-9]|2[0-9]|3[01])-(0[1-9]|1[012])-[0-9]{4}\"
-                                                   placeholder=\"ΗΗ-ΜΜ-ΕΕΕΕ\"
-                                                   name=\"birthdate\" value=\"";
-        // line 126
-        echo twig_escape_filter($this->env, (isset($context["birthdate"]) ? $context["birthdate"] : null), "html", null, true);
+                                                   name=\"profession\" value=\"";
+        // line 150
+        echo twig_escape_filter($this->env, (isset($context["profession"]) ? $context["profession"] : null), "html", null, true);
         echo "\">
                                             </div>
                                             </div>
 \t\t\t\t\t</div>
+\t\t\t\t\t <!--/row-->
+\t\t\t\t\t                    <div class=\"row\">
+                                        <div class=\"col-md-6\">
+                                          <div class=\"form-group\">
+\t\t\t\t\t\t\t\t\t\t\t\t<label class=\"control-label col-md-3\">Email</label>
+\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"col-md-9\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"input-icon\">
+\t\t\t\t\t\t\t\t\t\t\t       <i class=\"fa fa-envelope\"></i>
+\t\t\t\t\t\t\t\t\t\t\t       <input type=\"email\" class=\"form-control\" name=\"email\" value=\"";
+        // line 162
+        echo twig_escape_filter($this->env, (isset($context["email"]) ? $context["email"] : null), "html", null, true);
+        echo "\" placeholder=\"Email\">
+\t\t\t\t\t\t\t\t\t\t           </div>
+\t\t\t\t\t\t\t\t\t\t\t\t </div>
+\t\t\t\t\t\t\t\t\t\t\t</div>
+
+                                        </div>
+\t\t\t\t\t
+\t\t\t\t\t<!--/span-->
+\t\t\t\t\t<div class=\"col-md-6\">
+                                            <div class=\"form-group\">
+                                            <label class=\"control-label col-md-3\">Facebook</label>
+                                            <div class=\"col-md-9\">
+                                            <input type=\"text\" class=\"form-control\" 
+\t\t\t\t\t\t\t\t\t\t\t\t
+                                        
+                                                   name=\"facebook\" value=\"";
+        // line 177
+        echo twig_escape_filter($this->env, (isset($context["facebook"]) ? $context["facebook"] : null), "html", null, true);
+        echo "\">
+                                            </div>
+                                            </div>
+\t\t\t\t\t</div>
+\t\t\t\t\t<!--/span-->
+                                    </div>
 \t\t\t\t\t<!--/span-->
                                     </div>
                                     <div class=\"row\">
@@ -215,7 +280,7 @@ class __TwigTemplate_75ddd646058823233ed37b64e74a04b4c74d315fc1545a871142a4a96ee
                                         <label class=\"control-label col-md-3\">Λοιπά Σχόλια  / Μετρήσεις :</label>
                                         <div class=\"col-md-12\">
                                         <textarea class=\"form-control\" rows=\"3\" name=\"comments\">";
-        // line 137
+        // line 190
         echo twig_escape_filter($this->env, (isset($context["comments"]) ? $context["comments"] : null), "html", null, true);
         echo "</textarea>
                                         
@@ -223,113 +288,14 @@ class __TwigTemplate_75ddd646058823233ed37b64e74a04b4c74d315fc1545a871142a4a96ee
                                         </div>                                    
                                         </div>
                                     </div>
-\t\t\t\t<h3 class=\"form-section\">Ατομικό Ιστορικό</h3>
-\t\t\t\t<!--/row-->
-                                <div class=\"row\">
-                                 <!--/span-->
-                                    <div class=\"col-md-6\">
-                                        <div class=\"form-group\">
-                                        <label class=\"control-label col-md-3\">Κάπνισμα</label>
-                                        <div class=\"col-md-9\">
-                                        <div class=\"radio-list\">
-                                        <label class=\"radio-inline\">
-                                        <input type=\"radio\" name=\"smoking\" value=\"1\" ";
-        // line 153
-        echo ((((isset($context["smoking"]) ? $context["smoking"] : null) == 1)) ? ("checked") : (""));
-        echo "  />
-                                        Ναι </label>
-                                        <label class=\"radio-inline\">
-                                        <input type=\"radio\" name=\"smoking\" value=\"0\" ";
-        // line 156
-        echo ((((isset($context["smoking"]) ? $context["smoking"] : null) == 0)) ? ("checked") : (""));
-        echo "/>
-                                        Όχι </label>
-                                        </div>
-                                        </div>
-                                        </div>
-                                    </div>
-\t\t\t\t<!--/span-->                                                                                                        
-                                    <div class=\"col-md-6\">
-                                        <div class=\"form-group\">
-                                        <label class=\"control-label col-md-3\">Αλκοόλ</label>
-                                        <div class=\"col-md-9\">
-                                        <div class=\"radio-list\">
-                                        <label class=\"radio-inline\">
-                                        <input type=\"radio\" name=\"alcohol\" value=\"1\" ";
-        // line 169
-        echo ((((isset($context["alcohol"]) ? $context["alcohol"] : null) == 1)) ? ("checked") : (""));
-        echo " />
-                                        Ναι </label>
-                                        <label class=\"radio-inline\">
-                                        <input type=\"radio\" name=\"alcohol\" value=\"0\" ";
-        // line 172
-        echo ((((isset($context["alcohol"]) ? $context["alcohol"] : null) == 0)) ? ("checked") : (""));
-        echo " />
-                                        Όχι </label>
-                                        </div>
-                                        </div>
-                                        </div>
-                                    </div>
-\t\t\t\t<!--/span-->
-                                </div>
-                                <div class=\"row\">
-                                 <!--/span-->
-                                    <div class=\"col-md-6\">
-                                        <div class=\"form-group\">
-                                        <label class=\"control-label col-md-3\">Αλεργίες</label>
-                                        <div class=\"col-md-9\">
-                                        <div class=\"radio-list\">
-                                        <label class=\"radio-inline\">
-                                        <input type=\"radio\" name=\"alergies\" value=\"1\" ";
-        // line 188
-        echo ((((isset($context["alergies"]) ? $context["alergies"] : null) == 1)) ? ("checked") : (""));
-        echo "  />
-                                        Ναι </label>
-                                        <label class=\"radio-inline\">
-                                        <input type=\"radio\" name=\"alergies\" value=\"0\" ";
-        // line 191
-        echo ((((isset($context["alergies"]) ? $context["alergies"] : null) == 0)) ? ("checked") : (""));
-        echo "/>
-                                        Όχι </label>
-                                        </div>
-                                        </div>
-                                        </div>
-                                    </div>
-\t\t\t\t<!--/span-->                                                                                                        
-                                    <div class=\"col-md-6\">
-                                        <div class=\"form-group\">
-                                        <label class=\"control-label col-md-3\">Παθήσεις</label>
-                                        <div class=\"col-md-9\">
-                                        <div class=\"radio-list\">
-                                        <label class=\"radio-inline\">
-                                        <input type=\"radio\" name=\"diseases\" value=\"1\" ";
-        // line 204
-        echo ((((isset($context["diseases"]) ? $context["diseases"] : null) == 1)) ? ("checked") : (""));
-        echo " />
-                                        Ναι </label>
-                                        <label class=\"radio-inline\">
-                                        <input type=\"radio\" name=\"diseases\" value=\"0\" ";
-        // line 207
-        echo ((((isset($context["diseases"]) ? $context["diseases"] : null) == 0)) ? ("checked") : (""));
-        echo " />
-                                        Όχι </label>
-                                        </div>
-                                        </div>
-                                        </div>
-                                    </div>
-\t\t\t\t<!--/span-->
-                                </div>
-                                
-\t\t\t\t
-\t\t\t\t<!--/row-->
-\t\t\t\t<div class=\"row\">                                                                                           
+\t\t\t\t\t\t\t\t<div class=\"row\">                                                                                           
                                     <div class=\"col-md-12\">
                                         <div class=\"form-group\">
-                                        <label class=\"control-label col-md-3\"> Κατηγορίες</label>
-                                        <div class=\"col-md-9\">
+                                        <label class=\"control-label col-md-1\"> Υπηρεσίες</label>
+                                        <div class=\"col-md-11\">
                                         <input type=\"hidden\" class=\"form-control select2_sample3\"  name=\"categories\"
                                             value= \"";
-        // line 224
+        // line 202
         echo twig_escape_filter($this->env, (isset($context["categories"]) ? $context["categories"] : null), "html", null, true);
         echo "\"
                                             
@@ -342,6 +308,73 @@ class __TwigTemplate_75ddd646058823233ed37b64e74a04b4c74d315fc1545a871142a4a96ee
         
 \t\t\t\t<!--/span-->
 \t\t\t\t</div>
+\t\t\t\t<h3 class=\"form-section\">Γνωριμία με το Kaliston </h3>
+\t\t\t\t<!--/row-->
+                                <div class=\"row\">
+                                 <!--/span-->
+                                    <div class=\"col-md-12\">
+                                        <div class=\"form-group\">
+                                        <div class=\"col-md-12\">
+                                        <div class=\"radio-list\">
+                                        <label class=\"radio-inline\">
+                                        <input type=\"radio\" name=\"From\" value=\"Internet\" ";
+        // line 222
+        echo ((((isset($context["From"]) ? $context["From"] : null) == "Internet")) ? ("checked") : (""));
+        echo "  />
+                                        Internet </label>
+                                        <label class=\"radio-inline\">
+                                        <input type=\"radio\" name=\"From\" value=\"Facebook\" ";
+        // line 225
+        echo ((((isset($context["From"]) ? $context["From"] : null) == "Facebook")) ? ("checked") : (""));
+        echo "/>
+                                        Facebook </label>
+\t\t\t\t\t\t\t\t\t\t<label class=\"radio-inline\">
+                                        <input type=\"radio\" name=\"From\" value=\"Δρόμος\" ";
+        // line 228
+        echo ((((isset($context["From"]) ? $context["From"] : null) == "Δρόμος")) ? ("checked") : (""));
+        echo "  />
+                                        Δρόμος </label>
+                                        <label class=\"radio-inline\">
+                                        <input type=\"radio\" name=\"From\" value=\"Έντυπο\" ";
+        // line 231
+        echo ((((isset($context["From"]) ? $context["From"] : null) == "Έντυπο")) ? ("checked") : (""));
+        echo "/>
+                                        Έντυπο </label>
+\t\t\t\t\t\t\t\t\t\t <label class=\"radio-inline\">
+                                        <input type=\"radio\" name=\"From\" value=\"Σύσταση\" ";
+        // line 234
+        echo ((((isset($context["From"]) ? $context["From"] : null) == "Σύσταση")) ? ("checked") : (""));
+        echo "/>
+                                        Σύσταση </label>\t\t\t\t\t\t\t\t\t\t
+                                        </div>
+                                        </div>
+                                        </div>
+                                    </div>
+\t\t\t\t                 <!--/span-->                                                                                                        
+                        
+\t\t\t\t<!--/span-->
+                                </div>
+\t\t\t\t\t\t\t\t<!--/row-->
+                                <div class=\"row\">
+                                     <div class=\"col-md-12\">
+                                            <div class=\"form-group\">
+                                            <label class=\"control-label col-md-3\">Συστάθηκε από : </label>
+                                            <div class=\"col-md-9\">
+                                            <input type=\"text\" class=\"form-control\" name=\"contactPerson\" value=\"";
+        // line 250
+        echo twig_escape_filter($this->env, (isset($context["contactPerson"]) ? $context["contactPerson"] : null), "html", null, true);
+        echo "\">
+                                            </div>
+                                            </div>
+
+                                        </div>
+   
+\t\t\t
+                                </div>
+                                
+\t\t\t\t
+\t\t\t\t<!--/row-->
+
                                 <h3 class=\"form-section\">Σωματομετρικά Χαρακτηριστικά:</h3>
                                 <!--/row-->
                                 <div class=\"row\">
@@ -350,7 +383,7 @@ class __TwigTemplate_75ddd646058823233ed37b64e74a04b4c74d315fc1545a871142a4a96ee
                                     <label class=\"control-label col-md-3\">Υψος</label>
                                     <div class=\"col-md-9\">
                                         <input type=\"text\" class=\"form-control\" name=\"height\" value=\"";
-        // line 242
+        // line 269
         echo twig_escape_filter($this->env, (isset($context["height"]) ? $context["height"] : null), "html", null, true);
         echo "\">
                                     </div>
@@ -362,7 +395,7 @@ class __TwigTemplate_75ddd646058823233ed37b64e74a04b4c74d315fc1545a871142a4a96ee
                                     <label class=\"control-label col-md-3\">Βάρος</label>
                                     <div class=\"col-md-9\">
                                     <input type=\"text\" class=\"form-control\" name=\"weight\" value=\"";
-        // line 251
+        // line 278
         echo twig_escape_filter($this->env, (isset($context["weight"]) ? $context["weight"] : null), "html", null, true);
         echo "\">
                                     </div>
@@ -376,7 +409,7 @@ class __TwigTemplate_75ddd646058823233ed37b64e74a04b4c74d315fc1545a871142a4a96ee
                                     <label class=\"control-label col-md-3\">% Λίπους</label>
                                     <div class=\"col-md-9\">
                                         <input type=\"text\" class=\"form-control\" name=\"bodyfat\" value=\"";
-        // line 262
+        // line 289
         echo twig_escape_filter($this->env, (isset($context["bodyfat"]) ? $context["bodyfat"] : null), "html", null, true);
         echo "\">
                                     </div>
@@ -388,7 +421,7 @@ class __TwigTemplate_75ddd646058823233ed37b64e74a04b4c74d315fc1545a871142a4a96ee
                                     <label class=\"control-label col-md-3\">Λοιπές Μετρήσεις</label>
                                     <div class=\"col-md-9\">
                                     <input type=\"text\" class=\"form-control\" name=\"measurments\" value=\"";
-        // line 271
+        // line 298
         echo twig_escape_filter($this->env, (isset($context["measurments"]) ? $context["measurments"] : null), "html", null, true);
         echo "\">
                                     </div>
@@ -396,41 +429,10 @@ class __TwigTemplate_75ddd646058823233ed37b64e74a04b4c74d315fc1545a871142a4a96ee
                                     </div>
 \t\t\t\t</div>
 \t\t\t\t\t\t\t\t <input type=\"hidden\" name=\"id\" value=\"";
-        // line 276
+        // line 303
         echo twig_escape_filter($this->env, (isset($context["id"]) ? $context["id"] : null), "html", null, true);
         echo "\">
-\t\t\t\t\t\t\t\t\t\t\t\t<!--/row-->
-                                                                                               <!-- <div class=\"row\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"col-md-6\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<label class=\"control-label col-md-3\">Category</label>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"col-md-9\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<select class=\"select2_category form-control\" data-placeholder=\"Choose a Category\" tabindex=\"1\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<option value=\"Category 1\">Category 1</option>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<option value=\"Category 2\">Category 2</option>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<option value=\"Category 3\">Category 5</option>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<option value=\"Category 4\">Category 4</option>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</select>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t\t\t<!--/span-->
-\t\t\t\t\t\t\t\t\t\t\t\t\t<!--<div class=\"col-md-6\">
-                                                                                                            <div class=\"form-group\">
-                                                                                                            <div class=\"col-md-9\">
-                                                                                                            <select name=\"foo\" class=\"select2me form-control\">
-                                                                                                            <option value=\"1\">Abc</option>
-                                                                                                            <option value=\"1\">Abc</option>
-                                                                                                            <option value=\"1\">This is a really long value that breaks the fluid design for a select2</option>
-                                                                                                            </select>
-                                                                                                            <span class=\"help-block\">
-                                                                                                                This field has error. </span> <label class=\"control-label col-md-3\">Last Name</label>
 
-                                                                                                            </div>
-                                                                                                            </div>
-\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
-                                                                                                    </div>
-\t\t\t\t\t\t\t\t\t\t\t\t\t<!--/span-->
 \t\t\t\t\t\t\t\t\t\t\t\t
 \t\t\t\t</div>
 \t\t\t\t<div class=\"form-actions\">
@@ -442,15 +444,15 @@ class __TwigTemplate_75ddd646058823233ed37b64e74a04b4c74d315fc1545a871142a4a96ee
                                         <a href=\"index.php\" class=\"btn green\"  > Άκυρο  </a>
 \t\t\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t\t";
-        // line 319
+        // line 315
         if (((isset($context["id"]) ? $context["id"] : null) > 0)) {
-            // line 320
+            // line 316
             echo "\t\t\t\t\t\t\t\t\t\t<a href=\"customerHandling.php?id=";
             echo twig_escape_filter($this->env, (isset($context["id"]) ? $context["id"] : null), "html", null, true);
             echo "\" class=\"btn red\"  onclick=\"return confirm('Είστε σίγουροι ?')\"> Διαγραφή  </a>
                                         ";
         }
-        // line 322
+        // line 318
         echo "\t\t\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t\t
@@ -473,10 +475,10 @@ class __TwigTemplate_75ddd646058823233ed37b64e74a04b4c74d315fc1545a871142a4a96ee
 ";
     }
 
-    // line 342
+    // line 338
     public function block_page_level_scripts($context, array $blocks = array())
     {
-        // line 343
+        // line 339
         $this->displayParentBlock("page_level_scripts", $context, $blocks);
         echo "
 
@@ -501,6 +503,6 @@ class __TwigTemplate_75ddd646058823233ed37b64e74a04b4c74d315fc1545a871142a4a96ee
 
     public function getDebugInfo()
     {
-        return array (  480 => 343,  477 => 342,  454 => 322,  448 => 320,  446 => 319,  400 => 276,  392 => 271,  380 => 262,  366 => 251,  354 => 242,  333 => 224,  313 => 207,  307 => 204,  291 => 191,  285 => 188,  266 => 172,  260 => 169,  244 => 156,  238 => 153,  219 => 137,  205 => 126,  188 => 112,  173 => 100,  160 => 90,  141 => 74,  137 => 73,  124 => 63,  110 => 52,  98 => 43,  76 => 24,  65 => 15,  62 => 14,  57 => 12,  54 => 11,  42 => 3,  39 => 2,  11 => 1,);
+        return array (  482 => 339,  479 => 338,  456 => 318,  450 => 316,  448 => 315,  433 => 303,  425 => 298,  413 => 289,  399 => 278,  387 => 269,  365 => 250,  346 => 234,  340 => 231,  334 => 228,  328 => 225,  322 => 222,  299 => 202,  284 => 190,  268 => 177,  250 => 162,  235 => 150,  220 => 138,  205 => 126,  191 => 115,  176 => 103,  160 => 90,  141 => 74,  137 => 73,  124 => 63,  110 => 52,  98 => 43,  76 => 24,  65 => 15,  62 => 14,  57 => 12,  54 => 11,  42 => 3,  39 => 2,  11 => 1,);
     }
 }
