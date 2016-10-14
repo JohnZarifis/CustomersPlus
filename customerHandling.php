@@ -28,19 +28,16 @@ $birthdate = $_POST['birthdate'];
 $address = mysql_real_escape_string($_POST['address']);
 $phone1 = $_POST['phone1'];
 $phone2 = $_POST['phone2'];
-$email = $_POST['email'];
+$email = mysql_real_escape_string($_POST['email']);
+$facebook = mysql_real_escape_string($_POST['facebook']);
 $gender = mysql_real_escape_string($_POST['gender']);
-$height  = mysql_real_escape_string($_POST['height']);
-$weight = mysql_real_escape_string($_POST['weight']);
-$bodyfat = mysql_real_escape_string($_POST['bodyfat']);
-$measurments = mysql_real_escape_string($_POST['measurments']);
 $categories = mysql_real_escape_string($_POST['categories']);
 $comments = mysql_real_escape_string($_POST['comments']);
-$alcohol = $_POST['alcohol'];
-$alergies = $_POST['alergies'];
-$smoking = $_POST['smoking'];
-$diseases = $_POST['diseases'];
-
+$region = mysql_real_escape_string($_POST['region']);
+$ContactPerson = mysql_real_escape_string($_POST['ContactPerson']);
+$advChannel = mysql_real_escape_string($_POST['advChannel']);
+$profession = mysql_real_escape_string($_POST['profession']);
+$zipcode = mysql_real_escape_string($_POST['zipcode']);
 $birthdate = preg_replace('#(\d{2})-(\d{2})-(\d{4})#', '$3-$2-$1', $birthdate);
    
     
@@ -49,11 +46,11 @@ $birthdate = preg_replace('#(\d{2})-(\d{2})-(\d{4})#', '$3-$2-$1', $birthdate);
 if (empty($_POST['id']) ) {
 
  $sql =   "insert into customers(name, surname, birthdate,"
-             ." address, phone1, phone2, email, gender, height, weight,"
-             ."bodyfat, measurments, categories, comments,alcohol, alergies, smoking, diseases) VALUES  "
+             ." address, phone1, phone2, email, gender, "
+             ." categories, comments, facebook, region, ContactPerson, advChannel,  profession, zipcode ) VALUES  "
 			 ."  ('{$name}'  , '{$surname}', '{$birthdate}' , '{$address}',   '{$phone1}', '{$phone2}'   ,   "
-			 ."   '{$email}', '{$gender}', '{$height}', '{$weight}' ,   '{$bodyfat}', '{$measurments}' , '{$categories}', '{$comments}' ,   "
-			 ."    {$alcohol}   ,   {$alergies}  , {$smoking}  ,   {$diseases}  ) ";
+			 ."   '{$email}', '{$gender}' , '{$categories}', '{$comments}' ,   "
+			 ."    '{$facebook}'   ,   '{$region}' , '{$ContactPerson}'  , '{$advChannel}'  , '{$profession}' , '{$zipcode}' ) ";
 //            
 //print($sql)	;
 $database->query($sql);
@@ -62,11 +59,11 @@ $database->query($sql);
 else{
      $id =  $_POST['id'];
     $sql = "update customers set  name = '{$name}', surname = '{$surname}' , birthdate = '{$birthdate}' ,  address =  '{$address}' ,   "
-	." phone1=  '{$phone1}', phone2 =   '{$phone2}' ,  email =  '{$email}' ,  gender =  '{$gender}' ,  height = '{$height}' ,  weight = '{$weight}' ,  bodyfat = '{$bodyfat}' , "
-	." measurments = '{$measurments}' ,  categories =  '{$categories}' , comments = '{$comments}' , alcohol =  {$alcohol} , alergies =  {$alergies} , smoking = {$smoking},  diseases =  {$diseases}   "
+	." phone1=  '{$phone1}', phone2 =   '{$phone2}' ,  email =  '{$email}' ,  gender =  '{$gender}' ,  facebook = '{$facebook}' ,  region = '{$region}' ,  ContactPerson = '{$ContactPerson}' , "
+	." advChannel = '{$advChannel}' ,  categories =  '{$categories}' , comments = '{$comments}' , profession = '{$profession}',  zipcode =  '{$zipcode}'   "
 	." where id = {$id}";
 	print($sql)	;
     $database->query($sql);
-}
+	   }
 }
  header( 'Location: index.php') ; 

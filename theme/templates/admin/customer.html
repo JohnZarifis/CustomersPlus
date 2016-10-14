@@ -185,7 +185,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                         <div class="form-group">
-                                        <label class="control-label col-md-3">Λοιπά Σχόλια  / Μετρήσεις :</label>
+                                        <label class="control-label col-md-3">Λοιπά Σχόλια  :</label>
                                         <div class="col-md-12">
                                         <textarea class="form-control" rows="3" name="comments">{{comments}}</textarea>
                                         
@@ -219,19 +219,19 @@
                                         <div class="col-md-12">
                                         <div class="radio-list">
                                         <label class="radio-inline">
-                                        <input type="radio" name="From" value="Internet" {{ From == "Internet" ? 'checked':''}}  />
+                                        <input type="radio" name="advChannel" value="Internet" {{ advChannel == "Internet" ? 'checked':''}}  />
                                         Internet </label>
                                         <label class="radio-inline">
-                                        <input type="radio" name="From" value="Facebook" {{ From == "Facebook" ? 'checked':''}}/>
+                                        <input type="radio" name="advChannel" value="Facebook" {{ advChannel == "Facebook" ? 'checked':''}}/>
                                         Facebook </label>
 										<label class="radio-inline">
-                                        <input type="radio" name="From" value="Δρόμος" {{ From == "Δρόμος" ? 'checked':''}}  />
+                                        <input type="radio" name="advChannel" value="Δρόμος" {{ advChannel == "Δρόμος" ? 'checked':''}}  />
                                         Δρόμος </label>
                                         <label class="radio-inline">
-                                        <input type="radio" name="From" value="Έντυπο" {{ From == "Έντυπο" ? 'checked':''}}/>
+                                        <input type="radio" name="advChannel" value="Έντυπο" {{ advChannel == "Έντυπο" ? 'checked':''}}/>
                                         Έντυπο </label>
 										 <label class="radio-inline">
-                                        <input type="radio" name="From" value="Σύσταση" {{ From == "Σύσταση" ? 'checked':''}}/>
+                                        <input type="radio" name="advChannel" value="Σύσταση" {{ advChannel == "Σύσταση" ? 'checked':''}}/>
                                         Σύσταση </label>										
                                         </div>
                                         </div>
@@ -247,7 +247,7 @@
                                             <div class="form-group">
                                             <label class="control-label col-md-3">Συστάθηκε από : </label>
                                             <div class="col-md-9">
-                                            <input type="text" class="form-control" name="contactPerson" value="{{contactPerson}}">
+                                            <input type="text" class="form-control" name="ContactPerson" value="{{ContactPerson}}">
                                             </div>
                                             </div>
 
@@ -256,50 +256,7 @@
 			
                                 </div>
                                 
-				
-				<!--/row-->
 
-                                <h3 class="form-section">Σωματομετρικά Χαρακτηριστικά:</h3>
-                                <!--/row-->
-                                <div class="row">
-                                    <div class="col-md-6">
-                                    <div class="form-group">
-                                    <label class="control-label col-md-3">Υψος</label>
-                                    <div class="col-md-9">
-                                        <input type="text" class="form-control" name="height" value="{{height}}">
-                                    </div>
-                                    </div>
-                                    </div>
-                                    <!--/span--> 
-                                    <div class="col-md-6">
-                                    <div class="form-group">
-                                    <label class="control-label col-md-3">Βάρος</label>
-                                    <div class="col-md-9">
-                                    <input type="text" class="form-control" name="weight" value="{{weight}}">
-                                    </div>
-                                    </div>
-                                    </div>
-				</div>
-                                <!--/row-->
-                                <div class="row">
-                                    <div class="col-md-6">
-                                    <div class="form-group">
-                                    <label class="control-label col-md-3">% Λίπους</label>
-                                    <div class="col-md-9">
-                                        <input type="text" class="form-control" name="bodyfat" value="{{bodyfat}}">
-                                    </div>
-                                    </div>
-                                    </div>
-                                    <!--/span--> 
-                                    <div class="col-md-6">
-                                    <div class="form-group">
-                                    <label class="control-label col-md-3">Λοιπές Μετρήσεις</label>
-                                    <div class="col-md-9">
-                                    <input type="text" class="form-control" name="measurments" value="{{measurments}}">
-                                    </div>
-                                    </div>
-                                    </div>
-				</div>
 								 <input type="hidden" name="id" value="{{id}}">
 
 												

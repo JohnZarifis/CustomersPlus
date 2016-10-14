@@ -9,10 +9,11 @@ $username = $_SESSION['user_name'];
 $sessionid = $_SESSION['user_id'];
 if (isset($_GET['id'])){
 $id = $_GET['id'];
-$sql = " SELECT id, name ,surname,DATE_FORMAT(birthdate,'%d-%m-%Y') as birthdate ,address,phone1,phone2,email,gender,height,weight,bodyfat,measurments, categories "
-         ." ,alcohol,alergies,smoking,diseases, comments "
-        . "FROM customers p "
-        . "WHERE p.id = {$id}";
+$sql = " SELECT id, name ,surname,DATE_FORMAT(birthdate,'%d-%m-%Y') as birthdate ,address,phone1,phone2,email,gender, categories "
+         ." , comments "
+		  ." , facebook,region,profession,zipcode, advChannel, ContactPerson  "
+        . " FROM customers p "
+        . " WHERE p.id = {$id}";
 
 //print_r($sql); // for debugging
 //print_r($username);
@@ -30,16 +31,14 @@ while ($row = mysql_fetch_assoc($result_set))
                          $phone2= $row['phone2'];
                          $email=$row['email'];
 						 $gender=$row['gender'];
-                         $height = $row['height'];
-                         $weight = $row['weight'];
-                         $bodyfat = $row['bodyfat'];
-                         $measurments = $row['measurments'];
 						 $categories = $row['categories'];
-						 $alcohol = $row['alcohol'];
-						 $alergies = $row['alergies'];
-						 $smoking = $row['smoking'];
-						 $diseases = $row['diseases'];
-						 $comments = $row['comments'];
+						 $facebook = $row['facebook'];
+						 $region = $row['region'];
+						 $profession = $row['profession'];
+						 $zipcode = $row['zipcode'];
+						 $advChannel = $row['advChannel'];
+						  $ContactPerson = $row['ContactPerson'];
+						   $comments = $row['comments'];
 						 
 			}
 //echo($name);
@@ -56,16 +55,15 @@ while ($row = mysql_fetch_assoc($result_set))
                                      'phone2' =>$phone2,
                                      'email' =>$email,
 									 'gender' => $gender,
-                                     'height' =>$height,
-                                    'weight'=>$weight,
-                                    'bodyfat'=>$bodyfat,
-                                    'measurments'=>$measurments,
 									'categories' => $categories,
-									'alcohol' => $alcohol,
-									'alergies' => $alergies,
-									'smoking' => $smoking,
-									'diseases' => $diseases,
+									'facebook' => $facebook,
+									'region' => $region,
+									'profession' => $profession,
+									'zipcode' => $zipcode,
 									'comments' => $comments,
+									'ContactPerson' => $ContactPerson,
+									'advChannel' => $advChannel,
+									
                                     ));
 
 }
